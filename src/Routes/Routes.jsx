@@ -28,8 +28,14 @@ const router = createBrowserRouter([
             element: <Installation/>,
         },
         {
-            path: '/appsDetails',
+            path: '/apps/:id',
             element: <AppsDetails/>,
+            loader: async ({ params }) => {
+            const res = await fetch("./apps.json");
+            const data = await res.json();
+            const app = data.find(a => a.id === parseInt(params.id));
+            if (!app) throw new Response("Not Found", { status: 404 });
+            return app; }
         },
         
        
