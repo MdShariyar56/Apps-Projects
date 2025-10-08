@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Star } from 'lucide-react';
 
 const Apps = () => {
   const Appss = useLoaderData();
+   const [search, setSearch] = useState('');
+   const term = search.trim().toLocaleLowerCase()
+   const searchApp = term ?  Appss.filter(AppProduct => AppProduct.title.toLocaleLowerCase().includes(term)) : Appss
+   console.log(searchApp)
 
   return (
-    <div className='bg-gray-100'>
+   
+    <div className='bg-gray-100 mb-10'>
        <div className='text-center py-5'>
            <h1 className='text-4xl font-bold py-5'>Our All Applications</h1>
         <p className='text-gray-600'>Explore All Apps on the Market developed by us. We code for Millions</p>
        </div>
         <div className='flex justify-between items-center container mx-auto  px-5 lg:px-0 '>
             <div>
-                <p>(0) Apps Found</p>
+                <p>({searchApp.length}) Apps Found</p>
             </div>
             <div>
             <label className="input">
@@ -29,12 +34,12 @@ const Apps = () => {
                     <path d="m21 21-4.3-4.3"></path>
                     </g>
                 </svg>
-                <input type="search" required placeholder="Search Apps" />
+                <input value={search} onChange={(e)=> setSearch(e.target.value)} type="search" required placeholder="Search Apps" />
                 </label>
             </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4  container mx-auto mt-5 p-5 lg:p-0">
-      {Appss.map(app => (
+      {searchApp.map(app => (
         <div
           key={app.id}
           className="card bg-base-300 border shadow-sm hover:scale-105 transition ease-in-out p-4 "
