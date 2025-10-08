@@ -2,8 +2,12 @@ import React from 'react';
 import BannerImg from '../assets/hero.png';
 import playStore from '../assets/fi_16076057.png';
 import Appstore from '../assets/Group.png';
+import { Link, useLoaderData } from 'react-router';
+import AppsCard from '../Component/AppsCard';
 
 const Home = () => {
+    const apps = useLoaderData()
+    console.log(apps)
   return (
     <div>
  
@@ -60,8 +64,26 @@ const Home = () => {
             <h1 className='text-4xl font-bold pb-2'>Trending Apps</h1>
            <p className='pb-2'>Explore All Trending Apps on the Market developed by us</p>
         </div>
-
       </div>
+        <div className='container mx-auto'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 '>
+            {
+                apps.map(app => (
+                   <AppsCard key={app.id} app={app} />
+                
+                        
+                ))
+
+               
+            }
+            
+        </div>
+        <div className='flex justify-center items-center mt-10'>
+             <Link  className='btn text-center bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white px-10' to='/Apps'>Show All</Link>
+      
+        </div>
+        
+        </div>
     </div>
   );
 };

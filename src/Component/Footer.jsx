@@ -3,17 +3,18 @@ import images from '../assets/logo.png'
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-primary-content p-10">
+        <footer className="footer footer-horizontal footer-center bg-gray-900 text-primary-content py-5 gap-y-2 mt-10">
   <aside>
    <img src={images} className='w-10 h-10' alt="" />
     <p className="font-bold">
-      ACME Industries Ltd.
+     HERO.IO
       <br />
       Providing reliable tech since 1992
     </p>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+    <p>Social Links</p>
   </aside>
   <nav>
+            
     <div className="grid grid-flow-col gap-4">
       <a>
         <svg
@@ -49,6 +50,7 @@ const Footer = () => {
         </svg>
       </a>
     </div>
+     <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </nav>
 </footer>
     );

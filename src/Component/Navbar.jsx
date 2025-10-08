@@ -1,6 +1,7 @@
 import { Github } from 'lucide-react';
 import Logoimg from '../assets/logo.png';
 import React from 'react';
+import { Link } from 'react-router';
 
 const Navbar = () => {
     return (
@@ -22,17 +23,17 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow hover:text-[#632EE3]">
-        <li><a>Home</a></li>
-        <li><a>Apps</a></li>
-        <li><a>Installation</a></li>
+        <li><Link  className="hover:text-[#632EE3]  " to="/">Home</Link></li>
+        <li><Link className="hover:text-[#632EE3]  " to="/apps">Apps</Link></li>
+        <li><Link className="hover:text-[#632EE3]  " to="/installation">Installation</Link></li>
       </ul>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex ">
     <ul className="menu menu-horizontal px-1  ">
-      <li><a className="hover:text-[#632EE3] hover:underline ">Home</a></li>
-      <li><a>Apps</a></li>
-      <li><a>Installation</a></li>
+    <li><Link  className="hover:text-[#632EE3]  " to="/">Home</Link></li>
+        <li><Link className="hover:text-[#632EE3]  " to="/apps">Apps</Link></li>
+        <li><Link className="hover:text-[#632EE3]  " to="/installation">Installation</Link></li>
     </ul>
   </div>
   <div className="navbar-end ">
