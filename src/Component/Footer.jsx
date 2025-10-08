@@ -3,7 +3,7 @@ import images from '../assets/logo.png'
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-gray-900 text-primary-content py-5 gap-y-2 mt-10">
+        <footer className="footer footer-horizontal footer-center bg-gray-900 text-primary-content py-5 gap-y-2 mt-0">
   <aside>
    <img src={images} className='w-10 h-10' alt="" />
     <p className="font-bold">

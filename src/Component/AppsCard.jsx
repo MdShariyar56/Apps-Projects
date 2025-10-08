@@ -9,7 +9,7 @@ const AppsCard = ({app}) => {
     <img
       className='w-full  object-cover'
       src={image}
-      alt="Shoes" />
+      alt="Img" />
   </figure>
   <div className="py-4">
     <h2 className="card-title">{title}</h2>
