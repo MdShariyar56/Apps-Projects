@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ImagesErro from "../assets/error-404.png"
 
 
 const AppsNotFound = () => {
@@ -12,7 +13,7 @@ const AppsNotFound = () => {
    <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content text-center">
     <div className="max-w-md">
-      <img src={"https://i.ibb.co.com/jvQ6CNDq/App-Error.png"} alt="" />
+      <img src={ImagesErro} alt="" />
        <h1 className="text-4xl font-bold text-[#632EE3] mb-4">OPPS!! APP NOT FOUND</h1>
       <p className="text-lg text-gray-700">
         
