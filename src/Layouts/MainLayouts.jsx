@@ -1,16 +1,22 @@
 import React from 'react';
 import Navbar from '../Component/Navbar';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Footer from '../Component/Footer';
+import LoadingSpinner from '../Component/LoadingSpinner';
+
 
 const MainLayouts = () => {
+   const  Navigation = useNavigation()
     return (
         <div>
            <Navbar/>
-            <div >
-                 
+           {Navigation?.state === 'loading' ? (
+            <LoadingSpinner/>
+           ) : (
+             <main className='min-h-[calc(100vh-285px)]' >
                  <Outlet/>
-            </div>
+            </main>
+           )}
            
             <Footer/>
         </div>

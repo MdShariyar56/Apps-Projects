@@ -1,7 +1,7 @@
 import { Github } from 'lucide-react';
 import Logoimg from '../assets/logo.png';
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -29,16 +29,22 @@ const Navbar = () => {
       </ul>
     </div>
   </div>
-  <div className="navbar-center hidden lg:flex ">
-    <ul className="menu menu-horizontal px-1  ">
-    <li><Link  className="hover:text-[#632EE3]  " to="/">Home</Link></li>
-        <li><Link className="hover:text-[#632EE3]  " to="/apps">Apps</Link></li>
-        <li><Link className="hover:text-[#632EE3]  " to="/installation">Installation</Link></li>
-    </ul>
-  </div>
+ <div className="navbar-center hidden lg:flex ">
+  <ul className="menu menu-horizontal px-1">
+    <li><Link className="hover:text-[#632EE3]" to="/">Home</Link></li>
+    <li><Link className="hover:text-[#632EE3]" to="/apps">Apps</Link></li>
+    <li><Link className="hover:text-[#632EE3]" to="/installation">Installation</Link></li>
+  </ul>
+</div>
+
   <div className="navbar-end ">
     
-    <a className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"><Github />Contribute</a>
+    <a className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"
+    
+    href="https://github.com/MdShariyar56" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  ><Github />Contribute</a>
   </div>
 </div>
     );
